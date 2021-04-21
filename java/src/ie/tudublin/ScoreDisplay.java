@@ -8,7 +8,6 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-
 import processing.core.PApplet;
 
 public class ScoreDisplay extends PApplet
@@ -39,7 +38,8 @@ public class ScoreDisplay extends PApplet
 
 	public void setup() 
 	{
-		
+		loadScore();
+
 	}
 
 	public void draw()
@@ -56,13 +56,16 @@ public class ScoreDisplay extends PApplet
 
 		// Calling drawNotes function to draw notes on pentagram.
 		drawNotes();
-		
+
 	}
 
 	void drawNotes()
 	{
+		x = 400;
+		y = 400;
 		fill(0);
-		circle(x, y, 20);
+		circle(400, 400, 20);
+		line(x, x + 100, x, x);
 	}
 
 	void loadScore()
@@ -73,43 +76,6 @@ public class ScoreDisplay extends PApplet
 			notz.getNote();
 			notz.getDuration();
         }
-	}
-
-	public abstract class Note
-	{
-		// Creating private variables
-		private char note;	
-		private int duration;
-
-		// Constructor to be used for instance creation
-		public Note(char note, int duration)
-		{
-			this.note = note;
-			this.duration = duration;
-		}
-
-		// toString method to return char note and int duration back to a string.
-		public String toString()
-		{
-			return this.note + " " + this.duration + " ";
-		} 
-		
-		// Generated Setters and getters
-		public char getNote() {
-			return note;
-		}
-
-		public void setNote(char note) {
-			this.note = note;
-		}
-
-		public int getDuration() {
-			return duration;
-		}
-
-		public void setDuration(int duration) {
-			this.duration = duration;
-		}	
 	}
 }
 

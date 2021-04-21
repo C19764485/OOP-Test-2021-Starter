@@ -1,6 +1,11 @@
+/*
+	OOP 1 - Lab Test 1 (Javascript)
+	Author: Panagiotis Bampilis
+	Date:   21/April/2021
+	Score Display
+*/
+
 package ie.tudublin;
-
-
 
 public class Main
 {
