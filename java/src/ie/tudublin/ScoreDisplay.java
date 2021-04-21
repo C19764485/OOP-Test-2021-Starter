@@ -19,8 +19,6 @@ public class ScoreDisplay extends PApplet
 	// Creating variables to be used for centering objects
 	float halfwidth = width / 2;
 	float halfheight = height / 2;
-	int x, y = 0;
-	int type;
 
 	
 	// Creating an array list to be used for holding instances of the Note class
@@ -61,11 +59,19 @@ public class ScoreDisplay extends PApplet
 
 	void drawNotes()
 	{
-		x = 400;
-		y = 400;
-		fill(0);
-		circle(400, 400, 20);
-		line(x, x + 100, x, x);
+		int x, y;
+
+		x = 300;
+		y = 200;
+
+		for(int i = 0; i < score.length(); i++)
+		{
+			fill(0);
+			circle(x + (i * 60), y + map(50, 100, 0, 10, i * 10), 20);
+			line(x + (i * 60) + 10, y + map(50, 100, 0, 10, i * 5) + 10, x + (i * 60), y +  map(50, 100, 0, 10, i * 10) - 50);
+		}
+		
+		
 	}
 
 	void loadScore()
@@ -74,14 +80,14 @@ public class ScoreDisplay extends PApplet
 		int duration = 0;
 		int j = 0;
 
-
+		// Iterrating through score string length
 		for(int i = 0; i < score.length(); i++)
         {
 			notes = score.charAt(i);
 			
-			if(Character.isDigit(score.charAt(j + 1))) 
+			if(Character.isDigit(score.charAt(i))) 
             {
-				duration = score.charAt(i + 1) - '0';
+				duration = score.charAt(j + 1) - '0';
 				j++;
 			}			
 
