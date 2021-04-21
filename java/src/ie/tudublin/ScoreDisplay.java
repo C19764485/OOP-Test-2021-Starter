@@ -68,7 +68,7 @@ public class ScoreDisplay extends PApplet
 		{
 			fill(0);
 			circle(x + (i * 60), y + map(50, 100, 0, 10, i * 10), 20);
-			line(x + (i * 60) + 10, y + map(50, 100, 0, 10, i * 5) + 10, x + (i * 60), y +  map(50, 100, 0, 10, i * 10) - 50);
+			line(x + (i * 60) + 10, y + map(50, 100, 0, 10, i * 5), x + (i * 60) + 10, y + map(50, 100, 0, 10, 10) - 50);
 		}
 		
 		
