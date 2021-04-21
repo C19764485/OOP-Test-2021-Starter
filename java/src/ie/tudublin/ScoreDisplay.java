@@ -13,7 +13,7 @@ import processing.core.PApplet;
 public class ScoreDisplay extends PApplet
 {
 	String score = "DEFGABcd";
-	//String score = "D2E2F2G2A2B2c2d2";
+	// String score = "D2E2F2G2A2B2c2d2";
 	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
 
 	// Creating variables to be used for centering objects
@@ -70,8 +70,6 @@ public class ScoreDisplay extends PApplet
 			circle(x + (i * 60), y + map(50, 100, 0, 10, i * 10), 20);
 			line(x + (i * 60) + 10, y + map(50, 100, 0, 10, i * 5), x + (i * 60) + 10, y + map(50, 100, 0, 10, 10) - 50);
 		}
-		
-		
 	}
 
 	void loadScore()
