@@ -1,5 +1,5 @@
 /*
-	OOP 1 - Lab Test 1 (Javascript)
+	OOP 1 - Lab Test 1 (Java)
 	Author: Panagiotis Bampilis
 	Date:   21/April/2021
 	Score Display
