@@ -20,6 +20,7 @@ public class ScoreDisplay extends PApplet
 	// Creating variables to be used for centering objects
 	float halfwidth = width / 2;
 	float halfheight = height / 2;
+	int x, y = 0;
 	
 	// Creating an array list to be used for holding instances of the Note class
 	ArrayList<Note> notes = new ArrayList<Note>();
@@ -59,7 +60,16 @@ public class ScoreDisplay extends PApplet
 	void drawNotes()
 	{
 		fill(0);
-		// circle(x, y, 20);
+		circle(x, y, 20);
+	}
+
+	void loadScore()
+	{
+		for(int i = 0; i < notes.size(); i++)
+        {
+            Note notz = notes.get(i);
+			println(notz);
+        }
 	}
 
 	public abstract class Note
@@ -74,8 +84,30 @@ public class ScoreDisplay extends PApplet
 			this.note = note;
 			this.duration = duration;
 		}
-	}
 
+		// toString method to return char note and int duration back to a string.
+		public String toString()
+		{
+			return this.note + " " + this.duration + " ";
+		} 
+		
+		// Generated Setters and getters
+		public char getNote() {
+			return note;
+		}
+
+		public void setNote(char note) {
+			this.note = note;
+		}
+
+		public int getDuration() {
+			return duration;
+		}
+
+		public void setDuration(int duration) {
+			this.duration = duration;
+		}	
+	}
 }
 
 
