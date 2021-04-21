@@ -21,9 +21,11 @@ public class ScoreDisplay extends PApplet
 	float halfwidth = width / 2;
 	float halfheight = height / 2;
 	int x, y = 0;
+	int type;
+
 	
 	// Creating an array list to be used for holding instances of the Note class
-	ArrayList<Note> notes = new ArrayList<Note>();
+	ArrayList<Note> notesIns = new ArrayList<Note>();
 
 	public void settings()
 	{
@@ -65,10 +67,11 @@ public class ScoreDisplay extends PApplet
 
 	void loadScore()
 	{
-		for(int i = 0; i < notes.size(); i++)
+		for(int i = 0; i < notesIns.size(); i++)
         {
-            Note notz = notes.get(i);
-			println(notz);
+            Note notz = notesIns.get(i);
+			notz.getNote();
+			notz.getDuration();
         }
 	}
 
