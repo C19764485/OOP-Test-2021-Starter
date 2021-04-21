@@ -21,6 +21,9 @@ public class ScoreDisplay extends PApplet
 	float halfwidth = width / 2;
 	float halfheight = height / 2;
 	
+	// Creating an array list to be used for holding instances of the Note class
+	ArrayList<Note> notes = new ArrayList<Note>();
+
 	public void settings()
 	{
 		size(1000, 500);
@@ -58,4 +61,21 @@ public class ScoreDisplay extends PApplet
 		fill(0);
 		// circle(x, y, 20);
 	}
+
+	public abstract class Note
+	{
+		// Creating private variables
+		private char note;	
+		private int duration;
+
+		// Constructor to be used for instance creation
+		public Note(char note, int duration)
+		{
+			this.note = note;
+			this.duration = duration;
+		}
+	}
+
 }
+
+
