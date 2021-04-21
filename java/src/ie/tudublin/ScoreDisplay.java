@@ -70,11 +70,27 @@ public class ScoreDisplay extends PApplet
 
 	void loadScore()
 	{
-		for(int i = 0; i < notesIns.size(); i++)
+		char notes = '\0';
+		int duration = 0;
+		int j = 0;
+
+
+		for(int i = 0; i < score.length(); i++)
         {
-            Note notz = notesIns.get(i);
-			notz.getNote();
-			notz.getDuration();
+			notes = score.charAt(i);
+			
+			if(Character.isDigit(score.charAt(j + 1))) 
+            {
+				duration = score.charAt(i + 1) - '0';
+				j++;
+			}			
+
+			Note notez = new Note(notes, duration);
+
+			notesIns.add(notez);
+
+			// Printing score notes and duration
+			System.out.println(notez.getNote() + "   " + notez.getDuration());
         }
 	}
 }
